@@ -4,7 +4,7 @@ import axios from "axios";
 export const login = createAsyncThunk("staffs/login", async (userData) => {
   try {
     const response = await axios.post(
-      "https://fsproject-server.onrender.com/login",
+      "https://res-server-05da.onrender.com/login",
       {
         remail: userData.email,
         rpassword: userData.pass,
@@ -22,7 +22,7 @@ export const registerUser = createAsyncThunk(
   async (userData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "https://fsproject-server.onrender.com/registerUser",
+        "https://res-server-05da.onrender.com/registerUser",
         userData
       );
       return response.data.staffs;

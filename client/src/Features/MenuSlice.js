@@ -4,7 +4,7 @@ import axios from "axios";
 export const getItems = createAsyncThunk("items/getItems", async (_id) => {
   try {
     const response = await axios.get(
-      "https://fsproject-server.onrender.com/getItems"
+      "https://res-server-05da.onrender.com/getItems"
     );
     return response.data.items;
   } catch (error) {
@@ -17,7 +17,7 @@ export const addItems = createAsyncThunk("items/addItems", async (itemData) => {
   try {
     console.log(itemData);
     const response = await axios.post(
-      "https://fsproject-server.onrender.com/addItems",
+      "https://res-server-05da.onrender.com/addItems",
       {
         name: itemData.name,
         price: itemData.price,
@@ -37,7 +37,7 @@ export const updateItems = createAsyncThunk(
   async (priceData) => {
     try {
       const response = await axios.post(
-        "https://fsproject-server.onrender.com/updateItems",
+        "https://res-server-05da.onrender.com/updateItems",
         {
           name: priceData.name,
           price: priceData.price,
@@ -58,7 +58,7 @@ export const deleteItems = createAsyncThunk(
   async (postid) => {
     try {
       await axios.delete(
-        `https://fsproject-server.onrender.com/deleteItems/${postid}`
+        `https://res-server-05da.onrender.com/deleteItems/${postid}`
       );
       return postid;
     } catch (error) {

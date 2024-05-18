@@ -12,7 +12,7 @@ export const submitOrder = createAsyncThunk(
   async (orderData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "https://fsproject-server.onrender.com/submitOrder",
+        "https://res-server-05da.onrender.com/submitOrder",
         orderData
       );
       return response.data;

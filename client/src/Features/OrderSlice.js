@@ -6,7 +6,7 @@ export const completeOrder = createAsyncThunk(
   async (orderId, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "https://fsproject-server.onrender.com/completeOrder",
+        "https://res-server-05da.onrender.com/completeOrder",
         {
           orderId,
         }
@@ -23,7 +23,7 @@ export const fetchOrders = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "https://fsproject-server.onrender.com/getOrders"
+        "https://res-server-05da.onrender.com/getOrders"
       );
       return response.data.orders;
     } catch (error) {
@@ -37,7 +37,7 @@ export const fetchCompletedOrders = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "https://fsproject-server.onrender.com/getCompletedOrders"
+        "https://res-server-05da.onrender.com/getCompletedOrders"
       );
       return response.data.orders;
     } catch (error) {
